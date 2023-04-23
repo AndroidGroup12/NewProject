@@ -7,27 +7,11 @@
     tools:context=".WordListFragment" >
 
     <TextView
-        android:id="@+id/stickyView"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#4C8492"
-        android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:text="Words"
-        android:textColor="#fff"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/words_to_learnTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
         android:text="Words to Learn: "
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -53,7 +37,7 @@
         android:layout_width="345dp"
         android:layout_height="224dp"
         android:layout_marginTop="4dp"
-        android:background="@color/purple_200"
+        android:background="#9AD4B4"
         android:elevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
@@ -66,7 +50,7 @@
         android:layout_width="345dp"
         android:layout_height="224dp"
         android:layout_marginTop="4dp"
-        android:background="@color/teal_200"
+        android:background="#BA9FDB"
         android:elevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"

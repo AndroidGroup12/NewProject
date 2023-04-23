@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <ImageButton
         android:id="@+id/shopping_imageButton"
@@ -33,22 +34,6 @@
         app:layout_constraintTop_toBottomOf="@+id/common_words_imageButton"
         app:srcCompat="@drawable/screen_shot_2023_04_07_at_10_24_47_pm" />
 
-    <TextView
-        android:id="@+id/stickyView"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#4C8492"
-        android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:text="Categories"
-        android:textColor="#fff"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/food_imageButton"
         android:layout_width="313dp"
@@ -74,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stickyView"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/screen_shot_2023_04_07_at_10_14_10_pm" />
 
     <ImageButton

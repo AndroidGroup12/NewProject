@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newproject.spanish_words
 
 
 //val list: List<Word> = spanish_words.get_shopping_list()

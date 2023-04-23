@@ -1,32 +1,30 @@
 package com.example.newproject
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
+import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.drawable.Drawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.TextView
+import androidx.core.animation.doOnEnd
+import androidx.fragment.app.Fragment
+import org.w3c.dom.Text
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FlashcardFragment.newInstance] factory method to
+ * Use the [flashcard.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FlashcardFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+class FlashcardFragment() : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -37,23 +35,93 @@ class FlashcardFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_flashcard, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FlashcardFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FlashcardFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val d = Dictionary()
+
+        val incorrectBtn: ImageButton = view.findViewById(R.id.incorrect_button)
+        incorrectBtn.setImageDrawable(resources.getDrawable(R.drawable.screen_shot_2023_04_14_at_8_59_54_pm))
+        val correctBtn: ImageButton = view.findViewById(R.id.correct_button)
+        correctBtn.setImageDrawable(resources.getDrawable(R.drawable.screen_shot_2023_04_14_at_8_59_41_pm))
+        val saveBtn: Button = view.findViewById(R.id.save_changes_button)
+
+        val flashcardFront: TextView = view.findViewById(R.id.flashcardFront)
+        val flashcardBack: TextView = view.findViewById(R.id.flashcardBack)
+        flashcardBack.visibility = View.INVISIBLE
+
+        var count: Int = 0
+        updateCards(count, flashcardFront, flashcardBack)
+
+        incorrectBtn.setOnClickListener {
+            count++
+            if (count >= wordsToLearn.size)
+                count = 0
+
+            updateCards(count, flashcardFront, flashcardBack)
+        }
+
+        correctBtn.setOnClickListener {
+            wordsMastered.add(wordsToLearn[count])
+            wordsMastered.distinct()
+            wordsToLearn.removeAt(count)
+            if (count >= wordsToLearn.size)
+                count = 0
+            updateCards(count, flashcardFront, flashcardBack)
+        }
+
+        saveBtn.setOnClickListener {
+            Log.i("FILES", "$wordsMastered")
+            d.writeData(requireContext())
+        }
+
+        flashcardFront.setOnClickListener {
+            flipCard(view.context, flashcardBack, it)
+        }
+
+        flashcardBack.setOnClickListener {
+            flipCard(view.context, flashcardFront, it)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun updateCards(count: Int, front: TextView, back: TextView) {
+        if (wordsToLearn.isEmpty()) {
+            front.text = "Add some words!"
+            back.text = "Add some words!"
+            return
+        }
+        front.text = wordsToLearn[count].languageWord
+        back.text = wordsToLearn[count].englishTranslation
+    }
+
+    private fun flipCard(context: Context, visibleView: View, invisibleView: View) {
+        try {
+            visibleView.visibility = View.VISIBLE
+            val scale = context.resources.displayMetrics.density
+            val cameraDist = 8000 * scale
+            visibleView.cameraDistance = cameraDist
+            invisibleView.cameraDistance = cameraDist
+            val flipOutAnimatorSet =
+                AnimatorInflater.loadAnimator(
+                    context,
+                    R.animator.flip_out
+                ) as AnimatorSet
+            flipOutAnimatorSet.setTarget(invisibleView)
+            val flipInAnimatorSet =
+                AnimatorInflater.loadAnimator(
+                    context,
+                    R.animator.flip_in
+                ) as AnimatorSet
+            flipInAnimatorSet.setTarget(visibleView)
+            flipOutAnimatorSet.start()
+            flipInAnimatorSet.start()
+            flipInAnimatorSet.doOnEnd {
+                invisibleView.visibility = View.INVISIBLE
             }
+        } catch (e: Exception) {
+            Log.i("Flashcard Screen", e.toString())
+        }
     }
 }

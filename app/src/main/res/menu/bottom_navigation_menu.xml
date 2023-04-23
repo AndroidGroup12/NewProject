@@ -23,10 +23,10 @@
         android:icon="@drawable/ic_baseline_library_books_24"/>
 
     <item
-        android:id="@+id/action_stats"
+        android:id="@+id/action_settings"
         android:enabled="true"
         app:showAsAction="ifRoom"
-        android:title="Stats"
-        android:icon="@drawable/ic_baseline_show_chart_24"/>
+        android:title="Settings"
+        android:icon="@drawable/baseline_settings_24"/>
 
 </menu>

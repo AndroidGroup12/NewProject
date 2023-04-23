@@ -17,7 +17,7 @@
         android:paddingLeft="18sp"
         android:text="Word/Phrase"
         android:textAlignment="viewStart"
-        android:textSize="15sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/englishTv"
         app:layout_constraintStart_toStartOf="parent" />

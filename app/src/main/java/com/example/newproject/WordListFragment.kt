@@ -1,5 +1,6 @@
 package com.example.newproject
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -27,7 +28,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class WordListFragment : Fragment() {
-    private val studyList = mutableListOf<Word>()
     private val masteredList = mutableListOf<Word>()
     private lateinit var masteredRecyclerView: RecyclerView
     private lateinit var studyRecyclerView: RecyclerView
@@ -53,13 +53,12 @@ class WordListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // TODO: STUDY LIST recyclerview, dapter and layoutManager
-        set = spanish_words().get_shopping_list().toMutableSet()
-        studyList.addAll(wordsToLearn)
+        set = Dictionary().get_shopping_list().toMutableSet()
         wordsToLearnTV = view.findViewById<TextView>(R.id.to_learn_count)
-        wordsToLearnTV.text = studyList.size.toString()
+        wordsToLearnTV.text = wordsToLearn.size.toString()
 
         studyRecyclerView = view.findViewById(R.id.words_to_learnRV)
-        wordListAdapter = WordListAdapter(requireContext(), studyList)
+        wordListAdapter = WordListAdapter(requireContext(), wordsToLearn)
         studyRecyclerView.adapter = wordListAdapter
 
         // layout
@@ -68,13 +67,11 @@ class WordListFragment : Fragment() {
             studyRecyclerView.addItemDecoration(dividerItemDecoration)
         }
 
-        // TODO: MASTERED LIST recyclerview, dapter and layoutManager
-        masteredList.addAll(spanish_words().get_places_list())
-        wordsToLearnTV = view.findViewById<TextView>(R.id.mastered_count)
-        wordsToLearnTV.text = masteredList.size.toString()
+        wordsmasteredTV = view.findViewById<TextView>(R.id.mastered_count)
+        wordsmasteredTV.text = wordsMastered.size.toString()
 
         masteredRecyclerView = view.findViewById(R.id.words_masteredRV)
-        wordListAdapter = WordListAdapter(requireContext(), masteredList)
+        wordListAdapter = WordListAdapter(requireContext(), wordsMastered)
         masteredRecyclerView.adapter = wordListAdapter
 
         // layout

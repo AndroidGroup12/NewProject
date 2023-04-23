@@ -75,14 +75,12 @@ class VocabListAdapter (private val context: Context, private val items: List<Wo
     }
 
     fun addToList(word: Word) {
-        val to_study = spanish_words()
         if (!(wordsToLearn.contains(word))) {
             wordsToLearn.add(word)
         }
     }
 
     fun deleteFromList(word: Word) {
-        val to_study = spanish_words()
         wordsToLearn.remove(word)
     }
 
