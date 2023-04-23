@@ -1,4 +1,4 @@
-# Milestone 1 - VocabBoost
+# Milestone 1 - VocaBoost
 
 ## Table of Contents
 
@@ -14,13 +14,12 @@ Allows users to memorize top 100 most commonly used words of a foreign language 
 
 ### App Evaluation
 
-[Evaluation of your app across the following attributes]
 - **Category:** Education
-- **Mobile:** Mobile is important for convenience as a phone is always on a person. Notifications also help remind the user to study.
+- **Mobile:** Mobile is important for convenience as a phone is always on a person.
 - **Story:** Helps user connect with a country's culture, do well in school, or become independent when traveling.
 - **Market:** Anyone wanting to learn a new language, is travelling, or a student.
-- **Habit:** User can create a customized plan. Notifications also help remind the user to study. For example, let user set how many words to study per day before using the app, and notify user if it's not met.
-- **Scope:** V1 would allow user to learn top 100 most commonly used words of a foreign language. V2 would allow user to learn school level vocabulary of their choice. V3 would allow user to choose a country they want to go, find the attractions, and learn words of that language.
+- **Habit:** User can set daily goals to study for a certain period of time, and the app will remind them if the goal has been met for that day.
+- **Scope:** Users would learn top 100 most commonly used words of multiple foreign languages by different categories.
 
 ## Product Spec
 
@@ -28,24 +27,19 @@ Allows users to memorize top 100 most commonly used words of a foreign language 
 
 **Required Features**
 
-* User can have options to choose a foreign language and category to learn (at least 2 options).
-   - [X] Save a language choice using sharedPreferences 
-* User can see the list of words of the category and their status (mastered or to learn)
-   - [X] xml file was created
-* User can see the English meaning of a word, click to see it in foreign language and decide if they remember it or not.
-   - [X] xml file was created
-* User can track progress - see lists of words mastered and words to study. 
-   - [X] collect list of words for each language
+- [X] User can have options to choose a foreign language and different categories to learn from.
+- [X] User can see the list of words of the category and their status (mastered or to learn)
+- [X] User can see the English meaning of a word, click to see it in foreign language and decide if they remember it or not.
+- [X] User can track progress - see lists of words mastered and words to study. 
+- [X] User can change a language and progress will be saved.
 
 
 **Stretch Features**
 * Add text-to-speech to know how to pronounce a word
-* User can receive push Notifications.
+* Push Notifications.
 * Set the goal of learning: ex. how many words per day
-* Log-in
+* Login and progress is saved in the remote database
 * Searching destination and getting reccomendations of activities
-    * Keep record of what the user did and rate their experience
-* Option for user to choose different categories of words to learn (pop culture, dining, hospital)
 
 ### Milestone 2 (Unit 8):  Build Progress
 1. Vocab List
@@ -74,8 +68,8 @@ GIF created with LiceCap
 - Word List Screen
     - displays all the words(with translation) the user will learn
 
-- Stats Screen
-    - Display the number of words learned and number of words to learn
+- Settings Screen
+    - lets the user choose/change the language to study
 
 ### 3. Navigation
 
@@ -84,11 +78,11 @@ GIF created with LiceCap
 * Words Screen
 * Learning Screen
     * after you click on a category, a flashcard study fragment is shown
-* Stats Screen
+* Settings Screen
 
 **Flow Navigation** (Screen to Screen)
 
-- Set-up Screen
+- Set-up Screen (Choose Language)
   * => Words Screen
 
 
