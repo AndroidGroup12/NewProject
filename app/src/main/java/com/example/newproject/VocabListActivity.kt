@@ -135,7 +135,7 @@ class VocabListActivity : AppCompatActivity() {
         val to_study = spanish_words()
         wordsToLearn.remove(word)
     }
-    
+
     fun updateText(Btn: Button) {
         if (categoryBoolean == false) {
             Btn.text = "Add All"
