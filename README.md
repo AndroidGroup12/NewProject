@@ -41,6 +41,9 @@ Allows users to memorize top 100 most commonly used words of a foreign language 
 * Login and progress is saved in the remote database
 * Searching destination and getting reccomendations of activities
 
+### App Showcase
+<img src='https://user-images.githubusercontent.com/98482880/233872741-8e76b9bb-5d98-4dd3-b2bf-e2e148eee89f.gif' title='Showcase' width='' alt='Showcase' />
+
 ### Milestone 2 (Unit 8):  Build Progress
 1. Vocab List
 <img src='https://user-images.githubusercontent.com/98482880/232628623-e4994ba0-f86b-4f67-9584-9e02ef63daad.png' title='Dictionary' width='' alt='Dictionary' />
