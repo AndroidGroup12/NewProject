@@ -213,8 +213,7 @@ class Dictionary {
         }
     }
 
-    val germanDictionary = mutableMapOf("voy" to "I go", "sabes" to "you know", "estaba" to "I was", "puede" to "can",
-        "eres" to "are", "ese" to "that", "usted" to "you")
+    val germanDictionary = mutableMapOf("der / die / das" to "the", "und" to "and", "sein" to "to be", "in" to "in", "haben" to "to have", "ich" to "I", "du" to "you", "sie" to "they", "er" to "he", "sie" to "she", "zu" to "to / at", "werden" to "to become", "für" to "for", "gehen" to "to go", "brauchen" to "to eat", "sehen" to "to need", "schreiben" to "to see", "laufen" to "to write", "mein" to "to run", "der Reisepass" to "Passport", "das Visum" to "Visa", "das Gepäck" to "Luggage", "das Reiseziel" to "Destination", "der Tourist" to "Tourist", "die Reiseroute" to "Itinerary", "der Flug" to "Flight", "das Hotel" to "Hotel", "der Rucksack" to "Backpack", "die Karte" to "Map", "der Reiseführer" to "Guidebook", "die Kultur" to "Culture", "die Stadt" to "City", "der Transport" to "Transportation", "das Souvenir" to "Souvenir", "ausländisch" to "foreign", "das Flugzeug" to "Airplane", "zu reisen" to "to travel", "das Reisebüro" to "Travel Agency", "der Reisevermittler" to "Travel Agent", "das Eis" to "Ice Cream", "das Erdbeereis" to "Strawberry Ice Cream", "das Vanilleeis" to "Vanilla Ice Cream", "das Schokoeis" to "Chocolate Ice Cream", "das Wasser" to "Water", "der Kaffee" to "Coffee", "der Kakao" to "Cocoa", "das Soda" to "Soda", "die Cola" to "Cola", "die Milch" to "Milk", "der Tee" to "Tea", "der Saft" to "Juice", "der Salat" to "Salad", "der Käse" to "Cheese", "der Käsebrot" to "Cheese Sandwich", "die Kuchen" to "Cake", "die Wurst" to "Sausage", "die Pizza" to "Pizza", "die Kartoffel" to "Potato", "di Pommes Frites" to "French Fries", "der Park" to "Park", "die Bibliothek" to "Library", "die Schule" to "School", "das Museum" to "Museum", "das Rathaus" to "City Hall", "das Krankenhaus" to "Hospital", "die Polizeistation" to "Police Station", "die Feuerwache" to "Fire Station", "das Einkaufszentrum" to "Shopping Mall", "das Kino" to "Movie Theater", "das Restaurant" to "Restaurant", "das Fitnessstudio" to "Gym", "das Schwimmbad" to "Swimming Pool", "das Gemeindezentrum" to "Community Center", "die Kirche" to "Church", "die Post" to "Post Office", "die Bank" to "Bank", "die Tankstelle" to "Gas Station", "der Supermarkt" to "Supermarket", "der Bahnhof" to "Train Station", "Kleidung" to "Clothing", "Schuhe" to "Shoes", "Lebensmittel" to "Food", "Accessoires" to "Accessories", "Lebensmittel" to "Groceries", "Elektronik" to "Electronics", "Möbel" to "Furniture", "Schönheitsprodukte" to "Beauty products", "Spielzeug" to "Toys", "Bücher" to "Books", "Musik" to "Music", "Schmuck" to "Jewelry", "Handtaschen" to "Handbags", "Sportartikel" to "Sporting goods", "Tierbedarf" to "Pet supplies", "Werkzeuge" to "Tools", "Einkaufszentrum" to "Mall", "Geschäft" to "Store", "Geld" to "Money", "kaufen" to "to buy")
 
     private fun combineGermanLists(): MutableMap<String, String> {
         val map = mutableMapOf<String, String>()
@@ -238,7 +237,7 @@ class Dictionary {
     }
 
     val germanCommon = mutableListOf("der / die / das", "und", "sein", "in", "haben", "ich", "du", "sie", "er", "sie", "zu", "werden", "für", "gehen", "brauchen", "sehen", "schreiben", "laufen", "mein")
-    val germanCommonEng = mutableListOf("the", "und", "to be", "in", "to have", "I", "you", "they", "he", "she", "to / at", "to become", "for", "to go", "to eat", "to need", "to see", "to write", "to run", "mine")
+    val germanCommonEng = mutableListOf("the", "and", "to be", "in", "to have", "I", "you", "they", "he", "she", "to / at", "to become", "for", "to go", "to eat", "to need", "to see", "to write", "to run", "mine")
 
     val germanTravel = mutableListOf("der Reisepass", "das Visum", "das Gepäck", "das Reiseziel", "der Tourist", "die Reiseroute", "der Flug", "das Hotel", "der Rucksack", "die Karte", "der Reiseführer", "die Kultur", "die Stadt", "der Transport", "das Souvenir", "ausländisch", "das Flugzeug", "zu reisen", "das Reisebüro", "der Reisevermittler")
     val germanTravelEng = mutableListOf("Passport", "Visa", "Luggage", "Destination", "Tourist", "Itinerary", "Flight", "Hotel", "Backpack", "Map", "Guidebook", "Culture", "City", "Transportation", "Souvenir", "foreign", "Airplane",  "to travel", "Travel Agency", "Travel Agent")
@@ -251,47 +250,6 @@ class Dictionary {
 
     val germanShopping = mutableListOf("Kleidung", "Schuhe", "Lebensmittel", "Accessoires", "Lebensmittel", "Elektronik", "Möbel", "Schönheitsprodukte", "Spielzeug", "Bücher", "Musik", "Schmuck", "Handtaschen", "Sportartikel", "Tierbedarf", "Werkzeuge", "Einkaufszentrum", "Geschäft", "Geld", "kaufen")
     val germanShoppingEng = mutableListOf("Clothing", "Shoes", "Food", "Accessories", "Groceries", "Electronics", "Furniture", "Beauty products", "Toys", "Books", "Music", "Jewelry", "Handbags", "Sporting goods", "Pet supplies", "Tools", "Mall", "Store", "Money", "to buy")
-
-    /*fun writeData(context: Context) {
-        val sharedPreferences = context.getSharedPreferences("LanguagePref", Context.MODE_PRIVATE)
-        val language = sharedPreferences.getString("language", "Spanish")
-
-        if (language == "Spanish") {
-            val filename1: String = "$language.txt"
-            val filename2: String = "${language}Eng.txt"
-
-            val file1 = File(context.filesDir, filename1)
-            val file2 = File(context.filesDir, filename2)
-        }
-
-
-
-//        try {
-//            if (!file1.exists()) {
-//                file1.createNewFile()
-//                Log.i("FILES", "Opened $filename1")
-//            } else {
-//                val fileReader = FileReader(file)
-//                val bufferedReader = BufferedReader(fileReader)
-//                var line: String?
-//                while (bufferedReader.readLine().also { line = it } != null) {
-//                    indexes.add(line!!.toInt())
-//                }
-//                // Close the file
-//                fileReader.close()
-//                bufferedReader.close()
-//                Log.i("FILES", "Read $filename: $indexes")
-//            }
-//
-//        } catch (e: IOException) {
-//            File(filename).createNewFile()
-//            Log.i("FILES", "Failed to open $filename")
-//        }
-//
-//        if (!file2.exists()) {
-//            file2.createNewFile()
-//        }
-    }*/
 
     fun writeData(context: Context) {
         val sharedPreferences = context.getSharedPreferences("LanguagePref", Context.MODE_PRIVATE)
