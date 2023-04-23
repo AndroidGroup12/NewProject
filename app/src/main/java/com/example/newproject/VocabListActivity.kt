@@ -187,7 +187,7 @@ class VocabListActivity : AppCompatActivity() {
     fun deleteFromList(word: Word) {
         wordsToLearn.remove(word)
     }
-    
+
     fun updateText(Btn: Button) {
         if (categoryBoolean == false) {
             Btn.text = "Add All"
