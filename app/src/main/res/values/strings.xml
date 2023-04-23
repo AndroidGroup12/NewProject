@@ -8,4 +8,9 @@
     <string name="language4">Arabic</string>
     <string name="language5">Hebrew</string>
     <string name="language6">Russian</string>
+    <string name="most_common_words">Most common words</string>
+    <string name="tourist_category">Tourist Category</string>
+    <string name="food_category">Food and Dining Category</string>
+    <string name="places_category">Places Category</string>
+    <string name="shopping_category">Shopping Category</string>
 </resources>
