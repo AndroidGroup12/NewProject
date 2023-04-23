@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF8F1">
+
+    <TextView
+        android:id="@+id/vocabListStickyView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#4C8492"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="[Category Name] Vocab"
+        android:textColor="#fff"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vocabListRV"
+        android:layout_width="407dp"
+        android:layout_height="688dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goBackButton"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/vocab_item" />
+
+    <Button
+        android:id="@+id/goBackButton"
+        android:layout_width="58dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="100dp"
+        android:backgroundTint="#37306B"
+        android:padding="0dp"
+        android:text="Back"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/vocabListStickyView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addAll_button"
+        android:layout_width="75dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#37306B"
+        android:text="Add All"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/vocabListStickyView"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/goBackButton"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

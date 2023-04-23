@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FAF8F1">
+
+    <TextView
+        android:id="@+id/wordTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ellipsize="none"
+        android:maxLines="3"
+        android:padding="5dp"
+        android:paddingLeft="18sp"
+        android:text="Word/Phrase"
+        android:textAlignment="viewStart"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/englishTv"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/englishTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:paddingTop="5dp"
+        android:text="Translation"
+        android:layout_marginStart="10dp"
+        android:textAlignment="viewStart"
+        android:textSize="15sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add_button"
+        app:layout_constraintEnd_toStartOf="@+id/add_button"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toEndOf="@+id/wordTv" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#37306B"
+        android:maxLines="2"
+        android:padding="0dp"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
