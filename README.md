@@ -41,6 +41,9 @@ Allows users to memorize top 100 most commonly used words of a foreign language 
 * Login and progress is saved in the remote database
 * Searching destination and getting reccomendations of activities
 
+### Demo Day video
+[Here is the link to our demo day video!](https://drive.google.com/file/d/1DATngDvT-SKjHvYGJyGjg2zZAoWSyDlt/view?usp=sharing)
+
 ### App Showcase
 <img src='https://user-images.githubusercontent.com/98482880/233872741-8e76b9bb-5d98-4dd3-b2bf-e2e148eee89f.gif' title='Showcase' width='' alt='Showcase' />
 
